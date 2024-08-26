@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users_data",
+  "info": {
+    "singularName": "user-data",
+    "pluralName": "users-data",
+    "displayName": "UserData"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "masc",
+        "fem",
+        "other"
+      ]
+    },
+    "cellphone": {
+      "type": "biginteger"
+    },
+    "rg": {
+      "type": "biginteger"
+    },
+    "cpf": {
+      "type": "biginteger"
+    },
+    "frequency": {
+      "type": "boolean"
+    },
+    "address": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "boolean"
+    },
+    "district": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "zip_code": {
+      "type": "string"
+    },
+    "addressNumber": {
+      "type": "biginteger"
+    },
+    "complement": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "birthdate": {
+      "type": "date"
+    },
+    "profilePic": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "deleteDate": {
+      "type": "date"
+    },
+    "activeDate": {
+      "type": "datetime"
+    },
+    "activedUltilDate": {
+      "type": "datetime"
+    }
+  }
+}
