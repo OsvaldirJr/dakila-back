@@ -742,7 +742,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -770,6 +769,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'manyToOne',
       'plugin::users-permissions.role'
+    >;
+    user_data: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToOne',
+      'api::user-data.user-data'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -876,6 +880,7 @@ export interface ApiUserDataUserData extends Schema.CollectionType {
     singularName: 'user-data';
     pluralName: 'users-data';
     displayName: 'UserData';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -902,6 +907,21 @@ export interface ApiUserDataUserData extends Schema.CollectionType {
     deleteDate: Attribute.Date;
     activeDate: Attribute.DateTime;
     activedUltilDate: Attribute.DateTime;
+    core: Attribute.Relation<
+      'api::user-data.user-data',
+      'oneToOne',
+      'api::core.core'
+    >;
+    group: Attribute.Relation<
+      'api::user-data.user-data',
+      'oneToOne',
+      'api::group.group'
+    >;
+    app_role: Attribute.Relation<
+      'api::user-data.user-data',
+      'oneToOne',
+      'api::app-role.app-role'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
